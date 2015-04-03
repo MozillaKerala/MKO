@@ -1,2 +1,6 @@
 # mozkportal
-For the site mozillakerala.org.
+Mozilla Kerala Portal Project
+
+
+
+a [Sails](http://sailsjs.org) application
