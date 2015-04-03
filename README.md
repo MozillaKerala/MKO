@@ -23,7 +23,7 @@ Inital Planning
 
 - [ ] Install technologies required
 - [ ] Create landing page with following sections
-  -[ ] Landing Section(What we are and our motto)
+  - Landing Section(What we are and our motto)
   -[ ] Subscribe to Newsletter
   -[ ] Automated bug creator form to request events
   -[ ] Upcoming events section
