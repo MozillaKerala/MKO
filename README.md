@@ -32,6 +32,7 @@ Inital Planning
   - [ ] Contributions from Mozilla Kerala eg: featuring app or event
   - [ ] Footer Section with popular links
   - [ ] Admin Panel to manage all
+
 **Version 2.0.0.0**
 
 -[ ] Showcase previous events (Ideas invited)
