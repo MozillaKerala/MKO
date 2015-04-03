@@ -35,9 +35,9 @@ Inital Planning
 
 **Version 2.0.0.0**
 
--[ ] Showcase previous events (Ideas invited)
--[ ] Events can have a separate page with Gallery and blog on the event. 
-  -[ ] Feature to mark every attendees. Possibly pull it from a feedback form or create our own alternative for gogole forms where an event can have participants email, where in follow up can be made easy.
+- [ ] Showcase previous events (Ideas invited)
+- [ ] Events can have a separate page with Gallery and blog on the event. 
+- [ ] Feature to mark every attendees. Possibly pull it from a feedback form or create our own alternative for gogole forms where an event can have participants email, where in follow up can be made easy.
 
 ## Objectives :
 
