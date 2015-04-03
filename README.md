@@ -24,14 +24,14 @@ Inital Planning
 - [ ] Install technologies required
 - [ ] Create landing page with following sections
 - Landing Section(What we are and our motto)
--[ ] Subscribe to Newsletter
--[ ] Automated bug creator form to request events
--[ ] Upcoming events section
--[ ] Some statistics charts, like number of events, ppl we taught etc
--[ ] Link to existing blog. 
--[ ] Contributions from Mozilla Kerala eg: featuring app or event
--[ ] Footer Section with popular links
--[ ] Admin Panel to manage all
+  - [ ] Subscribe to Newsletter
+  - [ ] Automated bug creator form to request events
+  - [ ] Upcoming events section
+  - [ ] Some statistics charts, like number of events, ppl we taught etc
+  - [ ] Link to existing blog. 
+  - [ ] Contributions from Mozilla Kerala eg: featuring app or event
+  - [ ] Footer Section with popular links
+  - [ ] Admin Panel to manage all
 **Version 2.0.0.0**
 
 -[ ] Showcase previous events (Ideas invited)
