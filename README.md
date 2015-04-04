@@ -1,4 +1,7 @@
 Mozilla Kerala Portal
+=====================
+
+Read [wiki](https://github.com/nikhiljohn10/mozkportal/wiki/Getting-Started) for getting started with this project.
 
 Inital Planning
 ---------------
@@ -21,12 +24,12 @@ Inital Planning
 
 **Version 1.0.0.0**
 
-- [ ] Install technologies required
-- [ ] Create landing page with following sections
+- [x] Install technologies required
+- [x] Create landing page with following sections
 - Landing Section(What we are and our motto)
-  - [ ] Subscribe to Newsletter
+  - [x] Subscribe to Newsletter
   - [ ] Automated bug creator form to request events
-  - [ ] Upcoming events section
+  - [x] Upcoming events section
   - [ ] Some statistics charts, like number of events, ppl we taught etc
   - [ ] Link to existing blog. 
   - [ ] Contributions from Mozilla Kerala eg: featuring app or event
