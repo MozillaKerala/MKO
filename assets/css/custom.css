@@ -490,7 +490,6 @@ div.newsletter button[type=submit]{
 
 
 img.logo{
-	width: 60px;
 	margin-top: -15px;
 }
 
@@ -508,6 +507,53 @@ div.tm-name>span.green{
 
 footer{
 	min-height: 200px;
-	background-color: #4B5C66;
 	margin-top: 50px;
+	color: #FFF;
+    background: none repeat scroll 0% 0% #4B5C66;
+}
+
+footer a{
+	color: #73CFE3;
+}
+
+footer a:hover,footer a:focus,footer a:active{
+	color: #E6E6E6;
+	text-decoration: underline;
+}
+
+.footer {
+    height: auto;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    position: relative;
+    /*width: 100%;*/
+}
+.footer-bottom {
+	color: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: none repeat scroll 0% 0% #444;
+    border-top: 1px solid #CCC;
+}
+.footer-bottom p{
+	font-size: 12px;
+	margin: 0px;
+}
+
+ul, ol {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.footer ul {
+    font-size: 13px;
+    list-style-type: none;
+    margin-left: 0px;
+    padding-left: 0px;
+    margin-top: 15px;
+    color: #FFF;
+}
+
+.footer ul li a {
+    padding: 0px 0px 5px;
 }
