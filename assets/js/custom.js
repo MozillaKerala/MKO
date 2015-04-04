@@ -11,4 +11,7 @@ $(document).ready(function(){
 			$('#nav-main-menu').toggle( "fade" );
 		}	
 	});
+	$('button.durl').click(function() {
+		window.open($(this).attr('data-redirect-url'), '_blank');
+	});
 });

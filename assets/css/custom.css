@@ -8,6 +8,10 @@ h1,h2,h3,h4,h5,h6,p,ol,ul,li{
     font-weight: 300;
 }
 
+b{
+	font-weight: 700;
+}
+
 a{
 	color: #444;
 }
@@ -16,6 +20,8 @@ a:hover,a:focus,a:active{
 }
 
 hr{
+	/* border-color: transparent; */
+	border:none;
 	height: 11px;
 	width: 100%;
 	background: url('/images/hr-gradient.png') no-repeat scroll center center transparent;
@@ -29,6 +35,69 @@ p, ul, ol, dl, hgroup {
     margin: 0px 0px 20px;
 }
 
+div.round-shape{
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+	/* box-shadow: 0px 0px 20px rgba(0,0,0,1) inset; */
+	overflow: hidden;
+	margin: 0px auto;
+}
+
+div.round-shape.box{
+	border-radius: 10%;
+}
+
+div.round-shape.long-box{
+	height: 300px;
+	width: 150px;
+	border-radius: 30px;
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+	/* border: 2px solid #fff; */
+}
+
+div.round-shape.long-box:last-child{
+	margin-top: 10px;
+}
+
+
+div.round-shape.green{
+	color: #FFFFFF;
+	background-color: #048C4A;
+}
+
+div.round-shape.white{
+	color: #048C4A;
+	background-color: #FFFFFF;
+	box-shadow: 0px 0px 4px #fff;
+}
+
+div.round-shape img{
+	width: 200px;
+	height: auto;
+}
+
+div.round-shape.long-box img{
+	margin-left: -25px;
+	margin-top: -25px;
+}
+
+
+button.btn{
+	margin-top: 20px;
+	min-width:150px;
+	height: 40px;
+}
+
+button.btn.green{
+	color: #fff;
+	background-color: #048C4A;
+}
+
+button.btn.white{
+	color: #048C4A;
+	background-color: #fff;
+}
 
 
 /* 
@@ -182,8 +251,9 @@ div.tabzilla{
 	border-top: 2px solid #fff;
 }
 
-main div.events, main div.newsletter{
-	padding-top: 100px;
+main div.events, main div.our-best, main div.mk-stats, main div.newsletter{
+	padding-top: 50px;
+	padding-bottom: 50px;
 }
 
 img.main-logo{
@@ -196,7 +266,6 @@ img.main-logo{
 /* 
 	Download
 	========
-*/
 
 
 
@@ -222,6 +291,7 @@ div.ffd{
 }
 
 
+*/
 
 
 
@@ -231,6 +301,14 @@ div.ffd{
 */
 
 
+div.events{
+	color: #fff;
+	background-color: #048C4A;
+}
+div.events h1{
+	font-size: 40px;
+	text-shadow: 0px 0px 4px #fff;
+}
 
 div.event-updates{
 
@@ -238,8 +316,7 @@ div.event-updates{
 
 	padding: 1px 40px 0px;
 	border-radius: 4px;
-	background-color: #fdfdfd;
-	box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+	/* box-shadow: 0px 0px 10px rgba(0,0,0,0.4); */
 	z-index: 10;
 }
 
@@ -247,17 +324,9 @@ div.next-event{
 	margin-bottom: 40px; 
 }
 
-div.round-shape{
-	height: 200px;
-	width: 200px;
-	border-radius: 50%;
-	background-color: #048C4A;
-	box-shadow: 0px 0px 10px rgba(0,0,0,0.4) inset;
-}
-
 div.date{
 	text-align: center;
-	color: #fff;
+	color: #048C4A;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 300;
 }
@@ -276,15 +345,19 @@ div.date>span.month{
 	font-size: 40px;
 }
 
+div.event-name a{
+	color: #FEFEFE !important;
+}
+
 div.event-name>h4{
-	color: #747272;
+	color: #DAD4D4;
 }
 
 div.next-event-nav>span{
 	margin-top: 60px;
 	height: 100%;
 	font-size: 50px;
-	color: #B0B0B0;
+	color: #E4E4E4;
 	cursor: pointer;
 }
 
@@ -298,6 +371,77 @@ div.next-event-nav>span{
 	}
 }
 
+
+/* 
+	Our Best
+	========
+*/
+
+div.our-best{
+	background-color:  #fff;
+}
+
+div.our-best h1{
+	font-size: 40px;
+}
+
+div.our-best h2{
+	padding: 20px 0px;
+}
+
+div.our-best h4{
+	line-height: 25px;
+}
+
+div.round-shape.long-box.second{
+	margin-top: 50px;
+}
+
+div.left-vertical-line{
+	border-left: 1px solid rgba(0,0,0,0.2);
+}
+
+div.left-vertical-line>div:last-child{
+}
+
+@media screen and (max-width: 767px){
+	div.round-shape.long-box.second{
+		margin-top: 10px;
+	}
+}
+
+@media screen and (max-width: 991px){
+	div.left-vertical-line{
+		border-left: 1px solid rgba(0,0,0,0);
+	}
+}
+
+
+/* 
+	Mozk Stats
+	==========
+*/
+
+
+div.mk-stats{
+	color: #fff;
+	background-color: #048C4A;
+}
+
+div.mk-stats .round-shape{
+	margin-top: 50px;
+	margin-bottom: 30px;
+	font-weight: 300;
+	font-size: 60px;
+	padding-top: 60px;
+}
+
+div.mk-stats .sub-title{
+	font-size: 40px;
+	text-shadow: 0px 0px 4px #fff;
+	font-weight: 300;
+	margin-bottom: 30px;
+}
 
 
 /* 
@@ -346,14 +490,16 @@ div.newsletter button[type=submit]{
 
 
 img.logo{
-	width: 80px;
+	width: 60px;
+	margin-top: -15px;
 }
 
 div.tm-name{
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 700;
+	color: #FFF;
 	font-size: 30px;
-	text-shadow: 0px 0px 4px rgba(255,255,255,0.2);
+	/* text-shadow: 0px 0px 4px rgba(255,255,255,0.2); */
 }
 
 div.tm-name>span.green{
@@ -363,5 +509,5 @@ div.tm-name>span.green{
 footer{
 	min-height: 200px;
 	background-color: #4B5C66;
-	margin-top: 100px;
+	margin-top: 50px;
 }
