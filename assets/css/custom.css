@@ -1,0 +1,371 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+h1,h2,h3,h4,h5,h6,p,a,span,button,input,ol,ul,li{
+    font-family: "Open Sans",sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6,p,ol,ul,li{
+    font-weight: 300;
+}
+
+a{
+	color: #444;
+}
+a:hover,a:focus,a:active{
+	color: #333;
+}
+
+hr{
+	height: 11px;
+	width: 100%;
+	background: url('/images/hr-gradient.png') no-repeat scroll center center transparent;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+p, ul, ol, dl, hgroup {
+    margin: 0px 0px 20px;
+}
+
+
+
+/* 
+	Header
+	======
+*/
+
+
+
+div.wrapper{
+	background: url("/images/bg-tile.png") repeat-x scroll 0px 0px #F6F6F6;
+}
+
+#masthead{
+	border-top: 2px solid #fff;
+	width: 100%;
+	padding:0px;
+	display: block;
+	margin: 0px auto;
+	position: relative;
+}
+
+#masthead nav {
+    float: right;
+    margin: 0px 16px;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-family: "Open Sans",sans-serif;
+}
+
+#masthead .toggle{
+	display: none;
+}
+
+#masthead nav ul {
+    margin-bottom: 0px;
+}
+
+#masthead nav li {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0px;
+}
+
+#masthead nav li a, #masthead nav li a:link, #masthead nav li a:visited {
+    color: #484848;
+}
+
+#masthead nav li a, #masthead nav li b {
+    display: inline-block;
+    padding: 12px;
+    font-weight: normal;
+}
+
+
+@media screen and (max-width: 681px){
+	#nav-main-menu{
+		display: none;
+	}
+}
+
+@media screen and (max-width: 680px){
+	#masthead nav {
+	    float: none;
+	    padding-top: 10px;
+	    margin-left: 10px;
+	}
+
+	#masthead .toggle {
+	    display: block;
+	    width: 32px;
+	    height: 32px;
+	    background: url("/images/icn-menu.png") no-repeat scroll center top transparent;
+		text-indent: -999em;
+	    overflow: hidden;
+	    cursor: pointer;
+	    position: relative;
+	    top: -3px;
+	    left: auto;
+	}
+
+	#masthead .toggle.open {
+	    background-position: center -100px;
+	}
+
+	#nav-main-menu {
+	    background: none repeat scroll 0% 0% #FFF;
+	    position: absolute;
+	    z-index: 99;
+	    width: 200px;
+	    margin: 20px 0px 0px -20px;
+	    top: 30px;
+	    overflow: visible;
+	    border-radius: 10px;
+	    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);
+	    padding: 0px;
+	}
+
+	#nav-main #nav-main-menu li {
+	    display: block;
+	    float: none;
+	    margin: 0px 10px;
+	    border-bottom: 1px solid #F2F2F2;
+	}
+
+	#nav-main #nav-main-menu a, #nav-main #nav-main-menu b {
+	    cursor: pointer;
+	    display: block;
+	    text-transform: none;
+	    padding: 12px 35px 12px 10px;
+	    margin: 0px -10px;
+	}
+
+	#nav-main #nav-main-menu li.first > a {
+	    border-radius: 10px 10px 0px 0px;
+	}
+
+	#nav-main #nav-main-menu li.last > a {
+	    border-radius: 0px 0px 10px 10px;
+	}
+
+	#nav-main #nav-main-menu li.last {
+	    border-bottom: none;
+	    border-radius: 0px 0px 10px 10px;
+	}
+
+	#nav-main #nav-main-menu a:hover,#nav-main #nav-main-menu a:focus,#nav-main #nav-main-menu a:active{
+		color:#fff;
+		text-decoration:none;
+		text-shadow:1px 1px 0 rgba(0,0,0,0.25);
+		background-color:#247ac1;
+		background-position:94% 50%;
+		background-repeat:no-repeat;
+		background-image:-webkit-linear-gradient(top,#43a6e2,#247ac1);
+		background-image:linear-gradient(to bottom,#43a6e2,#247ac1)
+	}
+
+	#nav-main-menu::before {
+	    content: "";
+	    display: block;
+	    width: 28px;
+	    height: 10px;
+	    background: url("/images/menu-point.png") no-repeat scroll 0% 0% transparent;
+	    position: absolute;
+	    left: 22px;
+	    top: -10px;
+	}
+}
+
+div.tabzilla{
+	border-top: 2px solid #fff;
+}
+
+main div.events, main div.newsletter{
+	padding-top: 100px;
+}
+
+img.main-logo{
+	width: 100%;
+	margin-top: -180px;
+	z-index: 4;
+}
+
+
+/* 
+	Download
+	========
+*/
+
+
+
+div.download{
+	padding: 40px 15px; 
+	background-color: #048C4A;
+}
+
+button.ffd-btn{
+	background-color: #FEFEFE;
+	width: 300px;
+	height: 60px;
+	color: #636363;
+}
+
+div.download div.sub-link{
+	margin-left: 30px;
+}
+
+div.download div.sub-link,div.download div.sub-link a{
+	color: #fff;
+	font-size: 12px;
+}
+
+div.ffd{
+	margin-top: 40px;
+}
+
+
+
+
+
+/* 
+	Events
+	======
+*/
+
+
+
+div.event-updates{
+
+/* # BUG : when the top padding becomes zero, top margins jump out of parent div. */
+
+	padding: 1px 40px 0px;
+	border-radius: 4px;
+	background-color: #fdfdfd;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+	z-index: 10;
+}
+
+div.next-event{
+	margin-bottom: 40px; 
+}
+
+div.round-shape{
+	height: 200px;
+	width: 200px;
+	border-radius: 50%;
+	background-color: #048C4A;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.4) inset;
+}
+
+div.date{
+	text-align: center;
+	color: #fff;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+}
+
+div.date>span{
+	display: block;
+}
+
+div.date>span.day{
+	font-size: 60px;
+	margin-top: -20px; 
+}
+
+div.date>span.month{
+	padding-top: 40px;
+	font-size: 40px;
+}
+
+div.event-name>h4{
+	color: #747272;
+}
+
+div.next-event-nav>span{
+	margin-top: 60px;
+	height: 100%;
+	font-size: 50px;
+	color: #B0B0B0;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 767px){
+	div.next-event-nav > span {
+		margin-top: 140px;
+	}
+
+	div.newsletter button[type=submit]{
+		margin-top: 20px !important;
+	}
+}
+
+
+
+/* 
+	Newsletter
+	==========
+*/
+
+div.newsletter h1{
+	margin-bottom: 40px;
+}
+
+div.newsletter a{
+	color: #337AB7;
+	text-decoration: none;
+}
+
+
+div.newsletter input[type=email]{
+	padding: 10px;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+div.newsletter button[type=submit]{
+	margin-bottom: 10px;
+	border:none;
+	color: #fff;
+	font-weight: 700;
+	font-size: 14px !important;
+	width: 100%;
+	min-height: 45px;
+	background: none repeat scroll 0% 0% #0095DD;
+	font-size: 1.125rem;
+	font-weight: normal;
+	text-shadow: none;
+	text-transform: uppercase;
+	box-shadow: none;
+	border-radius: 7px;
+}
+
+
+/* 
+	Footer
+	======
+*/
+
+
+img.logo{
+	width: 80px;
+}
+
+div.tm-name{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	font-size: 30px;
+	text-shadow: 0px 0px 4px rgba(255,255,255,0.2);
+}
+
+div.tm-name>span.green{
+	color: #048C4A !important;
+}
+
+footer{
+	min-height: 200px;
+	background-color: #4B5C66;
+	margin-top: 100px;
+}
