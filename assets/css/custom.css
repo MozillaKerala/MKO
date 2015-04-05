@@ -82,6 +82,24 @@ div.round-shape.long-box img{
 	margin-top: -25px;
 }
 
+div.small-round{
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	margin: 0px auto;
+	overflow: hidden;
+	color: #048C4A;
+	border: 2px solid #048C4A;
+	background-color: #fff;
+	font-size: 30px;
+	padding-top: 15px;
+}
+
+div.small-round.white{
+	color: #FFF;
+	border: 2px solid #FFF;
+	background-color: #048C4A;
+}
 
 button.btn{
 	margin-top: 20px;
@@ -300,6 +318,9 @@ div.ffd{
 	======
 */
 
+main div.events{
+	padding-bottom: 0px;
+}
 
 div.events{
 	color: #fff;
@@ -311,12 +332,8 @@ div.events h1{
 }
 
 div.event-updates{
-
-/* # BUG : when the top padding becomes zero, top margins jump out of parent div. */
-
-	padding: 1px 40px 0px;
+	padding: 0px 40px;
 	border-radius: 4px;
-	/* box-shadow: 0px 0px 10px rgba(0,0,0,0.4); */
 	z-index: 10;
 }
 
@@ -353,19 +370,41 @@ div.event-name>h4{
 	color: #DAD4D4;
 }
 
-div.next-event-nav>span{
-	margin-top: 60px;
-	height: 100%;
+div.next-event-nav{
+	margin-top: 10px;
 	font-size: 50px;
 	color: #E4E4E4;
 	cursor: pointer;
+	border-radius: 4px;
+	margin-bottom: 40px;
+}
+
+div.next-event-nav:hover{
+	color:  #048C4A;
+	background-color: #E4E4E4;
+}
+
+
+div.more-events{
+	display: none;
+	height: auto;
+	overflow: hidden;
+}
+
+div.more-events a, div.more-events a:hover,div.more-events a:focus{
+	color: #FFF
+}
+
+div.more-events>.row .row{
+	margin-bottom: 40px;
+	margin-top: 40px;
+}
+
+div.more-events .month{
+	font-size: 20px; 
 }
 
 @media screen and (max-width: 767px){
-	div.next-event-nav > span {
-		margin-top: 140px;
-	}
-
 	div.newsletter button[type=submit]{
 		margin-top: 20px !important;
 	}
