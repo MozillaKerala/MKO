@@ -1,19 +1,19 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
 
-div.wrapper h1,
-div.wrapper h2,
-div.wrapper h3,
-div.wrapper h4,
-div.wrapper h5,
-div.wrapper h6,
-div.wrapper p,
-div.wrapper a,
-div.wrapper span,
-div.wrapper button,
-div.wrapper input,
-div.wrapper ol,
-div.wrapper ul,
-div.wrapper li {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+button,
+input,
+ol,
+ul,
+li {
     font-family: "Open Sans", sans-serif;
 }
 
@@ -30,21 +30,21 @@ div.wrapper li {
     font-weight: 300;
 }
 
-div.wrapper b {
+b {
     font-weight: 700;
 }
 
-div.wrapper a {
+a {
     color: #444;
 }
 
-div.wrapper a:hover,
-div.wrapper a:focus,
-div.wrapper a:active {
+a:hover,
+a:focus,
+a:active {
     color: #333;
 }
 
-div.wrapper hr {
+hr {
     border: none;
     height: 11px;
     width: 100%;
@@ -55,11 +55,11 @@ div.wrapper hr {
     background-size: cover;
 }
 
-div.wrapper p,
-div.wrapper ul,
-div.wrapper ol,
-div.wrapper dl,
-div.wrapper hgroup {
+p,
+ul,
+ol,
+dl,
+hgroup {
     margin: 0px 0px 20px;
 }
 
@@ -164,7 +164,7 @@ button.btn.white {
 */
 
 div.wrapper {
-    background: url("/images/bg-tile.png") repeat-x scroll 0px 0px #F6F6F6;
+	background-color: #E3E3E3;
 }
 
 #masthead {
@@ -315,35 +315,7 @@ img.main-logo {
     margin-top: -44px;
     z-index: 4;
 }
-/* 
-	Download
-	========
 
-
-
-div.download{
-	padding: 40px 15px; 
-	background-color: #048C4A;
-}
-
-button.ffd-btn{
-	background-color: #FEFEFE;
-	width: 300px;
-	height: 60px;
-	color: #636363;
-}
-
-div.download div.sub-link,div.download div.sub-link a{
-	color: #fff;
-	font-size: 12px;
-}
-
-div.ffd{
-	margin-top: 40px;
-}
-
-
-*/
 /* 
 	Events
 	======
@@ -361,12 +333,6 @@ div.events {
 div.events h1 {
     font-size: 40px;
     text-shadow: 0px 0px 4px #fff;
-}
-
-div.event-updates {
-    padding: 0px 40px;
-    border-radius: 4px;
-    z-index: 10;
 }
 
 div.next-event {
@@ -560,7 +526,6 @@ div.tm-name {
     font-weight: 700;
     color: #FFF;
     font-size: 30px;
-    /* text-shadow: 0px 0px 4px rgba(255,255,255,0.2); */
 }
 
 div.tm-name>span.green {
@@ -590,7 +555,6 @@ footer a:active {
     padding-top: 40px;
     padding-bottom: 30px;
     position: relative;
-    /*width: 100%;*/
 }
 
 .footer-bottom {

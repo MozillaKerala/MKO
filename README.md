@@ -31,9 +31,8 @@ Inital Planning
   - [x] Upcoming events section
   - [x] Some statistics charts, like number of events, ppl we taught etc
   - [x] Link to existing blog. 
-  - [ ] Contributions from Mozilla Kerala eg: featuring app or event
-  - [ ] Footer Section with popular links
-  - [ ] Admin Panel to manage all
+  - [x] Contributions from Mozilla Kerala eg: featuring app or event
+  - [x] Footer Section with popular links
 
 **Version 2.0.0.0**
 
