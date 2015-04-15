@@ -1,5 +1,4 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
-
 h1,
 h2,
 h3,
@@ -111,7 +110,7 @@ div.round-shape.green {
 div.round-shape.white {
     color: #048C4A;
     background-color: #FFFFFF;
-    box-shadow: 0px 0px 4px #fff;
+    /*box-shadow: 0px 0px 4px #fff;*/
 }
 
 div.round-shape img {
@@ -159,12 +158,12 @@ button.btn.white {
     background-color: #fff;
 }
 /* 
-	Header
-	======
+    Header
+    ======
 */
 
 div.wrapper {
-	background-color: #E3E3E3;
+    background-color: #E3E3E3;
 }
 
 #masthead {
@@ -173,6 +172,7 @@ div.wrapper {
     padding: 0px;
     display: block;
     margin: 0px auto;
+    z-index: 20;
     position: relative;
 }
 
@@ -313,16 +313,22 @@ main div.newsletter {
 img.main-logo {
     width: 100%;
     margin-top: -44px;
-    z-index: 4;
+    z-index: 10;
+    position: relative;
 }
 
+main header {
+    position: relative;
+}
 /* 
-	Events
-	======
+    Events
+    ======
 */
 
 main div.events {
     padding-bottom: 0px;
+    z-index: 10;
+    position: relative;
 }
 
 div.events {
@@ -332,7 +338,8 @@ div.events {
 
 div.events h1 {
     font-size: 40px;
-    text-shadow: 0px 0px 4px #fff;
+    margin-bottom: 50px;
+    /*text-shadow: 0px 0px 4px #fff;*/
 }
 
 div.next-event {
@@ -409,8 +416,8 @@ div.more-events .month {
     }
 }
 /* 
-	Our Best
-	========
+    Our Best
+    ========
 */
 
 div.our-best {
@@ -453,8 +460,8 @@ div.left-vertical-line {
     }
 }
 /* 
-	Mozk Stats
-	==========
+    Mozk Stats
+    ==========
 */
 
 div.mk-stats {
@@ -472,13 +479,14 @@ div.mk-stats .round-shape {
 
 div.mk-stats .sub-title {
     font-size: 40px;
-    text-shadow: 0px 0px 4px #fff;
+    /*text-shadow: 0px 0px 4px #fff;*/
+    
     font-weight: 300;
     margin-bottom: 30px;
 }
 /* 
-	Newsletter
-	==========
+    Newsletter
+    ==========
 */
 
 div.newsletter h1 {
@@ -504,7 +512,7 @@ div.newsletter button[type=submit] {
     font-size: 14px !important;
     width: 100%;
     min-height: 45px;
-    background: none repeat scroll 0% 0% #0095DD;
+    background-color: #0095DD;
     font-size: 1.125rem;
     font-weight: normal;
     text-shadow: none;
@@ -512,9 +520,14 @@ div.newsletter button[type=submit] {
     box-shadow: none;
     border-radius: 7px;
 }
+
+div.newsletter button[type=submit]:hover,
+div.newsletter button[type=submit]:active {
+    background-color: #36A3D8;
+}
 /* 
-	Footer
-	======
+    Footer
+    ======
 */
 
 img.logo {
@@ -561,8 +574,8 @@ footer a:active {
     color: #fff;
     padding-top: 10px;
     padding-bottom: 10px;
-    background: none repeat scroll 0% 0% #444;
-    border-top: 1px solid #CCC;
+    background: none repeat scroll 0% 0% #252F41;
+    border-top: 1px solid #A7A7C5;
 }
 
 .footer-bottom p {
