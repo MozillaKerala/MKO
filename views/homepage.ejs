@@ -11,8 +11,7 @@
 			<nav id="nav-main" role="navigation">
 				<span class="toggle" role="button">Menu</span>
 	    		<ul style="" id="nav-main-menu">
-	        		<li class="first"><a target="_blank" data-name="repo" href="https://github.com/MozillaKerala/MKO">Repo</a></li>
-	        		<li><a target="_blank" data-name="mission" href="http://blog.mozillakerala.org/">Blog</a></li>
+	        		<li class="first"><a target="_blank" data-name="mission" href="http://blog.mozillakerala.org/">Blog</a></li>
 	        		<li><a target="_blank" data-name="firefox" href="http://events.mozillakerala.org/">Events</a></li>
 	       		 	<li class="last"><a target="_blank" data-name="bugzilla" href="http://bugzilla.mozillakerala.org/">Bugzilla</a></li>
 	      		</ul>
@@ -30,39 +29,68 @@
 			<img class="main-logo" src="/images/main-logo.png" alt="Mozilla Kerala">
 		</header>
 
-		<div class="events">
+
+
+		<% 
+			function getShortMonth(mID){
+				return [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ][mID];
+			}
+			function getLongMonth(mID){
+				return [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ][mID];
+			}
+		%>
+		<div class="events full-container">
 			<div class="container">
 				<div class="row text-center">
 					<div class="col-sm-12">
 						<h1>Upcomming events</h1>
 					</div>
 				</div>
+				<%if (events.meta.total_count > 0) {%>
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="row">
 							<div class="col-sm-5 col-md-4">
+								<%
+									var id = 0;
+									var date = new Date(events.objects[id].start);
+								%>
 								<div class="next-event">
 									<div class="round-shape white date">
-										<span class="month">Apr</span>
-										<span class="day">23</span>
+										<span class="month"><%= getShortMonth(date.getMonth()) %></span>
+										<span class="day">
+											<%if (date.getDate()<10){ %>
+												<%=	"0"+date.getDate() %>
+											<%}else{ %>
+												<%=	date.getDate() %>
+											<%} %>
+										</span>
 									</div>
 								</div>
 							</div>
 							<div class="col-sm-7 col-md-8 text-left">
 								<div class="next-event">
 									<div class="event-name">
-										<h2><a target="_blank" href="http://events.mozillakerala.org/POTENZIA">POTENZIA - Introduction to Mozilla and Club inaguration at GECW </a></h2>
-										<h4><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp;<span>April 23, 2015</span></h4>
-										<h4><span class="glyphicon glyphicon-map-marker" aria-hidden="true"> </span>&nbsp;<span>Mananthavady, Kerala, India</span></h4>
+										<h2><a target="_blank" href="<%= events.objects[id].event_url %>"><%= events.objects[id].name %> </a></h2>
+										<h4><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp;<span><%= date.toDateString() %></span></h4>
+										<h4><span class="glyphicon glyphicon-map-marker" aria-hidden="true"> </span>&nbsp;<span><%= events.objects[id].city %>, <%= events.objects[id].region %>, <%= events.objects[id].country %></span></h4>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+				<% } else { %>
+				<div class="row">
+					<div class="col-sm-12 col-md-12 text-center">
+						<div class="no-events">No events found</div>
+					</div>
+				</div>
+				<% } %>
+				<%if (events.meta.total_count > 1) {%>
 				<div class="row">
 					<div class="col-xs-12">
-						<div class="next-event-nav hidden">
+						<div class="next-event-nav text-center">
 							<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
 						</div>
 					</div>
@@ -72,43 +100,70 @@
 						<div class="more-events">
 							<div class="row">
 								<div class="col-sm-4">
+									<% 
+										id++;
+										date = new Date(events.objects[id].start);
+									%>
 									<div class="row">
-										<div class="col-sm-6 col-sm-5 col-md-4">
-											<div class="small-round white">05</div>
-											<div class="month">August</div>
+										<div class="col-sm-6 col-sm-5 col-md-4 text-center">
+											<div class="small-round white">
+											<%if (date.getDate()<10){ %>
+												<%=	"0"+date.getDate() %>
+											<%}else{ %>
+												<%=	date.getDate() %>
+											<%} %></div>
+											<div class="month"><%= getLongMonth(date.getMonth()) %></div>
 										</div>
 										<div class="col-sm-6 col-sm-7 col-md-8 text-left">
 											<div>
-												<h3><a href="#">Mozilla Kerala Meetup 3.0</a></h3>
-												<h4><span class="glyphicon glyphicon glyphicon-map-marker" aria-hidden="true"></span> Kochi, Kerala, India</h4>
+												<h3><a href="#"><%= events.objects[id].name %></a></h3>
+												<h4><span class="glyphicon glyphicon glyphicon-map-marker" aria-hidden="true"></span> <%= events.objects[id].city %>, <%= events.objects[id].region %>, <%= events.objects[id].country %></h4>
 											</div>
 										</div>
 									</div>
 								</div>
 								<div class="col-sm-4">
+									<% 
+										id++;
+										date = new Date(events.objects[id].start);
+									%>
 									<div class="row">
-										<div class="col-sm-6 col-sm-5 col-md-4">
-											<div class="small-round white">05</div>
-											<div class="month">August</div>
+										<div class="col-sm-6 col-sm-5 col-md-4 text-center">
+											<div class="small-round white">
+											<%if (date.getDate()<10){ %>
+												<%=	"0"+date.getDate() %>
+											<%}else{ %>
+												<%=	date.getDate() %>
+											<%} %></div>
+											<div class="month"><%= getLongMonth(date.getMonth()) %></div>
 										</div>
 										<div class="col-sm-6 col-sm-7 col-md-8 text-left">
 											<div>
-												<h3><a href="#">Mozilla Kerala Meetup 3.0</a></h3>
-												<h4><span class="glyphicon glyphicon glyphicon-map-marker" aria-hidden="true"></span> Kochi, Kerala, India</h4>
+												<h3><a href="#"><%= events.objects[id].name %></a></h3>
+												<h4><span class="glyphicon glyphicon glyphicon-map-marker" aria-hidden="true"></span> <%= events.objects[id].city %>, <%= events.objects[id].region %>, <%= events.objects[id].country %></h4>
 											</div>
 										</div>
 									</div>
 								</div>
 								<div class="col-sm-4">
+									<% 
+										id++;
+										date = new Date(events.objects[id].start);
+									%>
 									<div class="row">
-										<div class="col-sm-6 col-sm-5 col-md-4">
-											<div class="small-round white">05</div>
-											<div class="month">August</div>
+										<div class="col-sm-6 col-sm-5 col-md-4 text-center">
+											<div class="small-round white">
+											<%if (date.getDate()<10){ %>
+												<%=	"0"+date.getDate() %>
+											<%}else{ %>
+												<%=	date.getDate() %>
+											<%} %></div>
+											<div class="month"><%= getLongMonth(date.getMonth()) %></div>
 										</div>
 										<div class="col-sm-6 col-sm-7 col-md-8 text-left">
 											<div>
-												<h3><a href="#">Mozilla Kerala Meetup 3.0</a></h3>
-												<h4><span class="glyphicon glyphicon glyphicon-map-marker" aria-hidden="true"></span> Kochi, Kerala, India</h4>
+												<h3><a href="#"><%= events.objects[id].name %></a></h3>
+												<h4><span class="glyphicon glyphicon glyphicon-map-marker" aria-hidden="true"></span> <%= events.objects[id].city %>, <%= events.objects[id].region %>, <%= events.objects[id].country %></h4>
 											</div>
 										</div>
 									</div>
@@ -116,43 +171,70 @@
 							</div>
 							<div class="row">
 								<div class="col-sm-4">
+									<% 
+										id++;
+										date = new Date(events.objects[id].start);
+									%>
 									<div class="row">
-										<div class="col-sm-6 col-sm-5 col-md-4">
-											<div class="small-round white">05</div>
-											<div class="month">August</div>
+										<div class="col-sm-6 col-sm-5 col-md-4 text-center">
+											<div class="small-round white">
+											<%if (date.getDate()<10){ %>
+												<%=	"0"+date.getDate() %>
+											<%}else{ %>
+												<%=	date.getDate() %>
+											<%} %></div>
+											<div class="month"><%= getLongMonth(date.getMonth()) %></div>
 										</div>
 										<div class="col-sm-6 col-sm-7 col-md-8 text-left">
 											<div>
-												<h3><a href="#">Mozilla Kerala Meetup 3.0</a></h3>
-												<h4><span class="glyphicon glyphicon glyphicon-map-marker" aria-hidden="true"></span> Kochi, Kerala, India</h4>
+												<h3><a href="#"><%= events.objects[id].name %></a></h3>
+												<h4><span class="glyphicon glyphicon glyphicon-map-marker" aria-hidden="true"></span> <%= events.objects[id].city %>, <%= events.objects[id].region %>, <%= events.objects[id].country %></h4>
 											</div>
 										</div>
 									</div>
 								</div>
 								<div class="col-sm-4">
+									<% 
+										id++;
+										date = new Date(events.objects[id].start);
+									%>
 									<div class="row">
-										<div class="col-sm-6 col-sm-5 col-md-4">
-											<div class="small-round white">05</div>
-											<div class="month">August</div>
+										<div class="col-sm-6 col-sm-5 col-md-4 text-center">
+											<div class="small-round white">
+											<%if (date.getDate()<10){ %>
+												<%=	"0"+date.getDate() %>
+											<%}else{ %>
+												<%=	date.getDate() %>
+											<%} %></div>
+											<div class="month"><%= getLongMonth(date.getMonth()) %></div>
 										</div>
 										<div class="col-sm-6 col-sm-7 col-md-8 text-left">
 											<div>
-												<h3><a href="#">Mozilla Kerala Meetup 3.0</a></h3>
-												<h4><span class="glyphicon glyphicon glyphicon-map-marker" aria-hidden="true"></span> Kochi, Kerala, India</h4>
+												<h3><a href="#"><%= events.objects[id].name %></a></h3>
+												<h4><span class="glyphicon glyphicon glyphicon-map-marker" aria-hidden="true"></span> <%= events.objects[id].city %>, <%= events.objects[id].region %>, <%= events.objects[id].country %></h4>
 											</div>
 										</div>
 									</div>
 								</div>
 								<div class="col-sm-4">
+									<% 
+										id++;
+										date = new Date(events.objects[id].start);
+									%>
 									<div class="row">
-										<div class="col-sm-6 col-sm-5 col-md-4">
-											<div class="small-round white">05</div>
-											<div class="month">August</div>
+										<div class="col-sm-6 col-sm-5 col-md-4 text-center">
+											<div class="small-round white">
+											<%if (date.getDate()<10){ %>
+												<%=	"0"+date.getDate() %>
+											<%}else{ %>
+												<%=	date.getDate() %>
+											<%} %></div>
+											<div class="month"><%= getLongMonth(date.getMonth()) %></div>
 										</div>
 										<div class="col-sm-6 col-sm-7 col-md-8 text-left">
 											<div>
-												<h3><a href="#">Mozilla Kerala Meetup 3.0</a></h3>
-												<h4><span class="glyphicon glyphicon glyphicon-map-marker" aria-hidden="true"></span> Kochi, Kerala, India</h4>
+												<h3><a href="#"><%= events.objects[id].name %></a></h3>
+												<h4><span class="glyphicon glyphicon glyphicon-map-marker" aria-hidden="true"></span> <%= events.objects[id].city %>, <%= events.objects[id].region %>, <%= events.objects[id].country %></h4>
 											</div>
 										</div>
 									</div>
@@ -161,14 +243,77 @@
 						</div>
 					</div>
 				</div>
+				<% } %>
 			</div>
 		</div>
 
 
+		<div class="milestones full-container">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 text-center">
+						<h1>Milestones</h1>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12 stones">
+						<div class="row">
+							<div class="col-sm-8 col-sm-offset-2 text-center">
+								<!-- <img src="/images/makerpartykochi.jpg" alt="Maker Part Kochi"> -->
+								<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/LE8Pk4US6rU" frameborder="0" allowfullscreen></iframe>
+								<h3>Maker Part Kochi</h3>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-8 col-sm-offset-2 text-center">
+								<img src="/images/html5devconfkochi.jpg" alt="htmldevconf">
+								<h3>HTML Developer Conference</h3>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-8 col-sm-offset-2 text-center">
+								<img src="/images/dinokids.jpg" alt="Dino Kids">
+								<h3>Dino Kids</h3>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-8 col-sm-offset-2 text-center">
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/tFF1GXmTo8M" frameborder="0" allowfullscreen></iframe>
+								<h3>Developer BootCamp</h3>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-8 col-sm-offset-2 text-center">
+								<!-- <img src="/images/hackergirls.jpg" alt="Hacker Girls"> -->
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/Y0afltzhNsY" frameborder="0" allowfullscreen></iframe>
+								<h3>Hacker Girls</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 
+		<div class="gallery full-container">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 text-center">
+						<h1>Gallery</h1>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<div style='position: relative; padding-bottom: 61%; height: 0; overflow: hidden;box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.1);'><iframe id='iframe' src='http://flickrit.com/slideshowholder.php?height=60&size=big&keyword=mozillakerala&theme=1&thumbnails=1&transition=1&layoutType=responsive&sort=0' scrolling='no' frameborder='0'style='width:100%; height:100%; position: absolute; top:0; left:0;' ></iframe></div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-		<div class="our-best">
+
+				<%if (false) {%>
+
+		<div class="our-best full-container">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 text-center">
@@ -227,10 +372,7 @@
 
 
 
-
-
-
-		<div class="mk-stats">
+		<div class="mk-stats full-container">
 			<div class="container">
 				<div class="row text-center">
 					<div class="col-sm-4">
@@ -263,15 +405,24 @@
 
 
 
+				<% } %>
 
 
-		<div class="newsletter">
+		<div class="newsletter full-container">
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12 text-center">
 						<h1>Get Mozilla Kerala updates</h1>
 					</div>
 				</div>
+				<div class="row">
+					<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 text-center">
+						<button type="submit" onclick="window.open('https://lists.mozilla.org/listinfo/community-kerala','_blank');">SIGN UP @ Our Mailing List</button>
+					</div>
+				</div>
+
+
+				<%if (false) {%>
 				<form action="" onsubmit="this.reset();">
 					<div class="row">
 						<div class="col-sm-5 col-sm-offset-1">
@@ -297,8 +448,14 @@
 						</div>
 					</div>
 				</form>
+				<% } %>
+
+
 			</div>
 		</div>
+
+
+
 	</main>
 
 <!-- 
@@ -322,28 +479,19 @@
 						<div class="col-sm-4 col-sm-offset-2">
 							<ul>
 								<li><a target="_blank" href="https://www.facebook.com/MozillaKerala">Facebook</a> . <a target="_blank" href="https://www.facebook.com/groups/MozillaKerala/">Facebook Group</a></li>
-								<li><a target="_blank" href="https://twitter.com/mozillakerala">Twitter</a> . <a target="_blank" href="https://plus.google.com/communities/114787248813145966099">Google Plus</a></li>
-								<li><a target="_blank" href="https://github.com/MozillaKerala">Github</a> . <a target="_blank" href="http://blog.mozillakerala.org/">Blog</a> . <a target="_blank" href="http://blog.mozillakerala.org/">Bugzilla</a></li>
+								<li><a target="_blank" href="https://twitter.com/mozillakerala">Twitter</a> . <a target="_blank" href="https://plus.google.com/communities/114787248813145966099">Google Plus</a> . <a target="_blank" href="https://github.com/MozillaKerala">Github</a></li>
 							</ul>
 						</div>
 						<div class="col-sm-4 col-sm-offset-2">
 							<ul>
-								<li>Email : <a href="mailto:hello@mozillakerala.org">hello@mozillakerala.org</a></li>
-								<li>IRC : <a href="irc://irc.mozilla.org/kerala">#kerala</a></li>
+								<li>Email : <a target="_blank" href="mailto:hello@mozillakerala.org">hello@mozillakerala.org</a></li>
+								<li>IRC : <a target="_blank" href="irc://irc.mozilla.org/kerala">#kerala</a></li>
+								<li>this.dev : <a target="_blank" href="https://github.com/MozillaKerala/MKO">MKO@github</a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="footer-bottom">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-12">
-		            	<p class="text-center"> Copyleft © Mozilla Kerala 2015. All left reserved. </p>
-					</div>
-				</div>
-        	</div>
 		</div>
 	</footer>
 </div>

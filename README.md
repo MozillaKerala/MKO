@@ -7,17 +7,13 @@ Inital Planning
 ---------------
 ## Technologies using  in this project :
 
-- AngularJS (Frontend Framework)
 - SailsJS (Backend Framework)
   - NodeJS
   - ExpressJS
   - EJS (Template Engine)
   - MVC Architecture
-- MariaDB (Database)
-- Redis (Web storage)
-- Forever (Production server deamon)
+- PM2 (Production server deamon)
 - Bootstrap (CSS Framework)
-- Coffee Script (Optional suggestion)
 
 
 ## Target :
