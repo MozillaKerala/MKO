@@ -1,6 +1,6 @@
 <div class="wrapper">
 
-<!-- 
+<!--
       Header Content
       ==============
 -->
@@ -19,7 +19,7 @@
 		</div>
 	</header>
 
-<!-- 
+<!--
       Body Content
       ============
 -->
@@ -31,7 +31,7 @@
 
 
 
-		<% 
+		<%
 			function getShortMonth(mID){
 				return [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ][mID];
 			}
@@ -43,7 +43,7 @@
 			<div class="container">
 				<div class="row text-center">
 					<div class="col-sm-12">
-						<h1>Upcomming events</h1>
+						<h1>Upcoming events</h1>
 					</div>
 				</div>
 				<%if (events.meta.total_count > 0) {%>
@@ -98,10 +98,12 @@
 				<div class="row">
 					<div class="col-sm-12">
 						<div class="more-events">
+              <% for (var id = 1; id < events.meta.total_count; id++) {%>
+              <% if (id%3==1) {%>
 							<div class="row">
+              <% } %>
 								<div class="col-sm-4">
-									<% 
-										id++;
+									<%
 										date = new Date(events.objects[id].start);
 									%>
 									<div class="row">
@@ -122,124 +124,10 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-sm-4">
-									<% 
-										id++;
-										date = new Date(events.objects[id].start);
-									%>
-									<div class="row">
-										<div class="col-sm-6 col-sm-5 col-md-4 text-center">
-											<div class="small-round white">
-											<%if (date.getDate()<10){ %>
-												<%=	"0"+date.getDate() %>
-											<%}else{ %>
-												<%=	date.getDate() %>
-											<%} %></div>
-											<div class="month"><%= getLongMonth(date.getMonth()) %></div>
-										</div>
-										<div class="col-sm-6 col-sm-7 col-md-8 text-left">
-											<div>
-												<h3><a href="#"><%= events.objects[id].name %></a></h3>
-												<h4><span class="glyphicon glyphicon glyphicon-map-marker" aria-hidden="true"></span> <%= events.objects[id].city %>, <%= events.objects[id].region %>, <%= events.objects[id].country %></h4>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-4">
-									<% 
-										id++;
-										date = new Date(events.objects[id].start);
-									%>
-									<div class="row">
-										<div class="col-sm-6 col-sm-5 col-md-4 text-center">
-											<div class="small-round white">
-											<%if (date.getDate()<10){ %>
-												<%=	"0"+date.getDate() %>
-											<%}else{ %>
-												<%=	date.getDate() %>
-											<%} %></div>
-											<div class="month"><%= getLongMonth(date.getMonth()) %></div>
-										</div>
-										<div class="col-sm-6 col-sm-7 col-md-8 text-left">
-											<div>
-												<h3><a href="#"><%= events.objects[id].name %></a></h3>
-												<h4><span class="glyphicon glyphicon glyphicon-map-marker" aria-hidden="true"></span> <%= events.objects[id].city %>, <%= events.objects[id].region %>, <%= events.objects[id].country %></h4>
-											</div>
-										</div>
-									</div>
-								</div>
+              <% if (id%3==0) {%>
 							</div>
-							<div class="row">
-								<div class="col-sm-4">
-									<% 
-										id++;
-										date = new Date(events.objects[id].start);
-									%>
-									<div class="row">
-										<div class="col-sm-6 col-sm-5 col-md-4 text-center">
-											<div class="small-round white">
-											<%if (date.getDate()<10){ %>
-												<%=	"0"+date.getDate() %>
-											<%}else{ %>
-												<%=	date.getDate() %>
-											<%} %></div>
-											<div class="month"><%= getLongMonth(date.getMonth()) %></div>
-										</div>
-										<div class="col-sm-6 col-sm-7 col-md-8 text-left">
-											<div>
-												<h3><a href="#"><%= events.objects[id].name %></a></h3>
-												<h4><span class="glyphicon glyphicon glyphicon-map-marker" aria-hidden="true"></span> <%= events.objects[id].city %>, <%= events.objects[id].region %>, <%= events.objects[id].country %></h4>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-4">
-									<% 
-										id++;
-										date = new Date(events.objects[id].start);
-									%>
-									<div class="row">
-										<div class="col-sm-6 col-sm-5 col-md-4 text-center">
-											<div class="small-round white">
-											<%if (date.getDate()<10){ %>
-												<%=	"0"+date.getDate() %>
-											<%}else{ %>
-												<%=	date.getDate() %>
-											<%} %></div>
-											<div class="month"><%= getLongMonth(date.getMonth()) %></div>
-										</div>
-										<div class="col-sm-6 col-sm-7 col-md-8 text-left">
-											<div>
-												<h3><a href="#"><%= events.objects[id].name %></a></h3>
-												<h4><span class="glyphicon glyphicon glyphicon-map-marker" aria-hidden="true"></span> <%= events.objects[id].city %>, <%= events.objects[id].region %>, <%= events.objects[id].country %></h4>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-sm-4">
-									<% 
-										id++;
-										date = new Date(events.objects[id].start);
-									%>
-									<div class="row">
-										<div class="col-sm-6 col-sm-5 col-md-4 text-center">
-											<div class="small-round white">
-											<%if (date.getDate()<10){ %>
-												<%=	"0"+date.getDate() %>
-											<%}else{ %>
-												<%=	date.getDate() %>
-											<%} %></div>
-											<div class="month"><%= getLongMonth(date.getMonth()) %></div>
-										</div>
-										<div class="col-sm-6 col-sm-7 col-md-8 text-left">
-											<div>
-												<h3><a href="#"><%= events.objects[id].name %></a></h3>
-												<h4><span class="glyphicon glyphicon glyphicon-map-marker" aria-hidden="true"></span> <%= events.objects[id].city %>, <%= events.objects[id].region %>, <%= events.objects[id].country %></h4>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+              <% } %>
+              <% } %>
 						</div>
 					</div>
 				</div>
@@ -458,7 +346,7 @@
 
 	</main>
 
-<!-- 
+<!--
       Footer Content
       ==============
 -->
